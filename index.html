@@ -6,10 +6,10 @@
     <title>ProteusOS - Linux para SOC</title>
     <style>
         :root {
-            --primary: #0a192f; /* Azul oscuro */
-            --secondary: #172a45; 
-            --accent: #64ffda; /* Verde tecnológico */
-            --text: #e6f1ff;
+            --primary: #f0f8ff;  /* 🔵 Azul claro (AliceBlue) */
+            --secondary: #b0e0e6; /* Azul pastel */
+            --accent: #4682b4;    /* Azul acero */
+            --text: #000000;      /* Texto negro */
         }
         body {
             font-family: 'Courier New', monospace;
@@ -22,12 +22,15 @@
         header {
             background: var(--secondary);
             padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center; /* Centrado */
         }
         .logo {
-            height: 50px;
+            height: 100px; /* Tamaño aumentado */
+            margin: 0 auto; /* Centrado */
+            display: block;
+        }
+        nav {
+            margin-top: 15px;
         }
         nav a {
             color: var(--accent);
@@ -40,7 +43,7 @@
         }
         .btn {
             background: var(--accent);
-            color: var(--primary);
+            color: white;
             padding: 10px 20px;
             margin: 10px;
             display: inline-block;
@@ -56,11 +59,19 @@
             bottom: 0;
             width: 100%;
         }
+        /* Estilo para el enlace de correo */
+        footer a {
+            color: #000000; /* Negro */
+            text-decoration: none;
+        }
+        footer a:visited {
+            color: #000000; /* Permanece negro después de visitar */
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="assets/logo.jpg" alt="ProteusOS Logo" class="logo">
+        <img src="assets/logo.png" alt="ProteusOS Logo" class="logo">
         <nav>
             <a href="/">Home</a>
             <a href="#download">Descargar</a>
@@ -81,7 +92,7 @@
 
     <footer>
         <p>Contacto: <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
-        <p>&copy; 2023 ProteusOS</p>
+        <p>&copy; 2025 ProteusOS</p>
     </footer>
 </body>
 </html>
