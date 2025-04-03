@@ -1,4 +1,87 @@
----
-layout: home
-author_profile: true
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProteusOS - Linux para SOC</title>
+    <style>
+        :root {
+            --primary: #0a192f; /* Azul oscuro */
+            --secondary: #172a45; 
+            --accent: #64ffda; /* Verde tecnológico */
+            --text: #e6f1ff;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--primary);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: var(--secondary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 50px;
+        }
+        nav a {
+            color: var(--accent);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 10px 20px;
+            margin: 10px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--secondary);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="ProteusOS Logo" class="logo">
+        <nav>
+            <a href="/">Home</a>
+            <a href="#download">Descargar</a>
+            <a href="mailto:info@proteusos.tech">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>ProteusOS</h1>
+        <p>Distribución Linux minimalista para análisis de seguridad (SOC).<br>
+        Ligera, eficiente y con herramientas integradas.</p>
+        
+        <div>
+            <a href="https://sourceforge.net/projects/proteusos/files/latest/download" class="btn">Descargar ISO</a>
+            <a href="https://paypal.me/proteusos" class="btn">Donar al Proyecto</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contacto: <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
+        <p>&copy; 2023 ProteusOS</p>
+    </footer>
+</body>
+</html>
