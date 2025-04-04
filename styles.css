@@ -115,3 +115,11 @@ footer {
 .light-mode #theme-toggle {
     color: var(--accent-light);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
