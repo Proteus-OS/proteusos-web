@@ -1,81 +1,21 @@
+/* Archivo index.html */
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProteusOS - Linux para SOC</title>
-    <style>
-        :root {
-            --primary: #f0f8ff;  /* 🔵 Azul claro (AliceBlue) */
-            --secondary: #b0e0e6; /* Azul pastel */
-            --accent: #4682b4;    /* Azul acero */
-            --text: #000000;      /* Texto negro */
-        }
-        body {
-            font-family: 'Courier New', monospace;
-            background: var(--primary);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: var(--secondary);
-            padding: 1rem;
-            text-align: center; /* Centrado */
-        }
-        .logo {
-            height: 100px; /* Tamaño aumentado */
-            margin: 0 auto; /* Centrado */
-            display: block;
-        }
-        nav {
-            margin-top: 15px;
-        }
-        nav a {
-            color: var(--accent);
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            margin: 10px;
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: var(--secondary);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        /* Estilo para el enlace de correo */
-        footer a {
-            color: #000000; /* Negro */
-            text-decoration: none;
-        }
-        footer a:visited {
-            color: #000000; /* Permanece negro después de visitar */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="dark-mode"> <!-- Modo oscuro por defecto -->
     <header>
         <img src="assets/logo.jpg" alt="ProteusOS Logo" class="logo">
         <nav>
-            <a href="/">Home</a>
-            <a href="#download">Descargar</a>
-            <a href="mailto:info@proteusos.tech">Contacto</a>
+            <a href="index.html">Home</a>
+            <a href="donaciones.html">Donaciones</a>
+            <a href="contacto.html">Contacto</a>
+            <button id="theme-toggle">🌙/☀️</button>
         </nav>
     </header>
 
@@ -86,7 +26,7 @@
         
         <div>
             <a href="https://sourceforge.net/projects/proteusos/files/latest/download" class="btn">Descargar ISO</a>
-            <a href="https://paypal.me/proteusos" class="btn">Donar al Proyecto</a>
+            <a href="donaciones.html" class="btn">Donar al Proyecto</a>
         </div>
     </main>
 
