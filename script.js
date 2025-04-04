@@ -17,4 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", "dark");
         }
     });
+    // Centrar el contenido en todas las páginas
+    document.querySelector("main").style.display = "flex";
+    document.querySelector("main").style.flexDirection = "column";
+    document.querySelector("main").style.justifyContent = "center";
+    document.querySelector("main").style.alignItems = "center";
+    document.querySelector("main").style.minHeight = "100vh";
 });
