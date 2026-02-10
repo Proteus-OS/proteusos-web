@@ -1,125 +1,247 @@
-/* Archivo styles.css */
+/* --- Definición de Fuente --- */
 @font-face {
     font-family: 'LuloClean';
-    src: url('assets/LuloClean.ttf') format('truetype');
+    src: url('LuloClean.ttf') format('truetype'); /* Ajustar ruta si está en assets */
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* --- Variables y Reset --- */
 :root {
-    --primary-dark: #0d1117;
-    --secondary-dark: #161b22;
-    --accent-dark: #58a6ff;
-    --text-dark: #c9d1d9;
+    --bg-body: #121212;
+    --bg-sidebar: #0a0a0a;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent-color: #00bcd4; /* Cyan Proteus */
+    --accent-hover: #008ba3;
+    --border-color: #333333;
+    --code-bg: #1e1e1e;
+    --sidebar-width: 260px;
     
-    --primary-light: #f0f8ff;
-    --secondary-light: #b0e0e6;
-    --accent-light: #4682b4;
-    --text-light: #000000;
+    /* Fuente personalizada para títulos, fuente sistema para lectura */
+    --font-heading: 'LuloClean', sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
+* { box-sizing: border-box; }
 
 body {
-    font-family: 'LuloClean', monospace;
-    background: var(--primary-dark);
-    color: var(--text-dark);
+    font-family: var(--font-body);
     margin: 0;
-    padding: 0;
+    display: flex;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
-    transition: all 0.3s ease;
+    min-height: 100vh;
 }
 
-body.light-mode {
-    background: var(--primary-light);
-    color: var(--text-light);
-}
-
-header {
-    background: var(--secondary-dark);
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    width: 100%;
+/* --- Sidebar / Navegación --- */
+aside {
+    width: var(--sidebar-width);
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    height: 100vh;
+    position: sticky;
     top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    flex-shrink: 0;
 }
 
-.light-mode header {
-    background: var(--secondary-light);
+.logo-area {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    text-align: center; /* Logo centrado en el sidebar */
 }
 
-.logo {
-    height: 200px;
+.logo-img {
+    max-width: 80%; /* Ajusta el tamaño del logo proteus3.png aquí */
+    height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 }
 
-nav {
-    margin-top: 10px;
+.logo-text {
+    font-family: var(--font-heading); /* Tu fuente LoloClean */
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    letter-spacing: 1px;
 }
 
-nav a {
-    color: var(--accent-dark);
-    margin: 0 15px;
+aside nav ul { list-style: none; padding: 0; margin: 0; }
+aside nav li { margin-bottom: 8px; }
+
+aside nav a {
     text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+aside nav a:hover, aside nav a.active {
+    background-color: rgba(0, 188, 212, 0.1);
+    color: var(--accent-color);
+}
+
+.copyright {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+/* --- Contenido Principal --- */
+main {
+    flex: 1;
+    padding: 40px 60px;
+    max-width: 1000px;
+}
+
+/* Tipografía */
+h1, h2, h3 { 
+    color: #fff; 
+    margin-top: 2.5rem; 
+    font-family: var(--font-heading); /* Títulos con LoloClean */
+}
+
+h1 { 
+    margin-top: 0; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 15px; 
+    font-size: 2.5rem; 
+}
+
+h2 { 
+    font-size: 1.8rem; 
+    margin-bottom: 1rem; 
+    color: var(--accent-color); 
+}
+
+p { margin-bottom: 1.2rem; color: var(--text-muted); }
+a { color: var(--accent-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Badge de versión */
+.version-badge {
+    font-family: var(--font-body);
+    font-size: 0.4em;
+    vertical-align: middle;
+    background: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    color: #fff;
     font-weight: bold;
 }
 
-.light-mode nav a {
-    color: var(--accent-light);
-}
+/* Hero Actions */
+.hero-actions { margin-top: 25px; }
 
-.btn {
-    background: var(--accent-dark);
-    color: white;
-    padding: 12px 24px;
-    margin: 10px;
+.btn-download {
     display: inline-block;
-    text-decoration: none;
-    border-radius: 8px;
+    background-color: var(--accent-color);
+    color: #000;
     font-weight: bold;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 15px;
+    transition: background 0.2s;
+    font-family: var(--font-body);
 }
 
-.btn:hover {
-    background: #1f6feb;
+.btn-download:hover { background-color: #fff; text-decoration: none; }
+.link-github { font-weight: bold; }
+
+/* Listas */
+ul.feature-list, ul.donation-list { list-style-type: disc; padding-left: 20px; color: var(--text-muted); }
+ul.feature-list li, ul.donation-list li { margin-bottom: 8px; }
+ul.donation-list { list-style: none; padding: 0; }
+ul.donation-list li { margin-bottom: 12px; font-size: 1.1rem; }
+
+/* Requisitos Grid */
+.req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.light-mode .btn {
-    background: var(--accent-light);
+.req-card {
+    background: var(--code-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
 }
 
-.light-mode .btn:hover {
-    background: #316ba3;
+.req-card h4 { margin: 0 0 10px 0; color: #fff; font-family: var(--font-body); font-weight: bold; }
+.req-card ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
+
+/* Bloques de Código */
+.code-container {
+    position: relative;
+    margin: 20px 0;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #d4d4d4;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    font-family: var(--font-body);
+}
+
+.copy-btn:hover { opacity: 1; background: var(--accent-color); }
+
+/* Footer & Disclaimer */
+.disclaimer-box {
+    background: rgba(255, 193, 7, 0.05);
+    border-left: 3px solid #ffc107;
+    padding: 15px;
+    margin: 30px 0;
+    font-size: 0.9rem;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: var(--secondary-dark);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.light-mode footer {
-    background: var(--secondary-light);
-}
-
-#theme-toggle {
-    background: none;
-    border: none;
-    color: var(--accent-dark);
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.light-mode #theme-toggle {
-    color: var(--accent-light);
-}
-
-main {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: #666;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    aside { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 20px;}
+    main { padding: 20px; }
+    .logo-img { max-width: 150px; }
 }
