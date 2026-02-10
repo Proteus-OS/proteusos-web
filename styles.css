@@ -190,7 +190,7 @@ footer {
     --accent-hover: #008ba3;
     --border-color: #333333;
     --code-bg: #1e1e1e;
-    --sidebar-width: 260px;
+    --sidebar-width: 400px;
     
     /* Fuente personalizada para títulos, fuente sistema para lectura */
     --font-heading: 'LuloClean', sans-serif;
@@ -419,6 +419,7 @@ footer {
     main { padding: 20px; }
     .logo-img { max-width: 150px; }
 }
+
 
 
 
