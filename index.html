@@ -1,38 +1,139 @@
-/* Archivo index.html */
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProteusOS - Linux para SOC</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>ProteusOS - Linux SOC Distribution</title>
+    
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode"> <!-- Modo oscuro por defecto -->
-    <header>
-        <img src="assets/proteus3.png" alt="ProteusOS Logo" class="logo">
+<body>
+
+    <aside>
+        <div class="logo-area">
+            <img src="assets/proteus3.png" alt="ProteusOS Logo" class="logo-img">
+            <div class="logo-text">ProteusOS</div>
+        </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="donaciones.html">Donaciones</a>
-            <a href="contacto.html">Contacto</a>
-            <button id="theme-toggle">🌙/☀️</button>
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#requisitos">Requisitos del Sistema</a></li>
+                <li><a href="#instalacion">Instalación</a></li>
+                <li><a href="#herramientas">Herramientas Incluidas</a></li>
+                <li><a href="#disclaimer">Aviso Legal</a></li>
+                <li><a href="#donaciones">Donaciones</a></li>
+            </ul>
         </nav>
-    </header>
+        <div class="copyright">
+            &copy; 2025 ProteusOS Project
+        </div>
+    </aside>
 
     <main>
-        <h1>ProteusOS</h1>
-        <p>Distribución Linux minimalista para análisis de seguridad (SOC).<br>
-        Ligera, eficiente y con herramientas integradas.</p>
         
-        <div>
-            <a href="https://sourceforge.net/projects/proteusos/files/latest/download" class="btn">Descargar ISO</a>
-            <a href="donaciones.html" class="btn">Donar al Proyecto</a>
-        </div>
+        <section id="inicio">
+            <h1>ProteusOS <span class="version-badge">v1.0</span></h1>
+            <p><strong>ProteusOS</strong> es una distribución Linux especializada, diseñada desde cero para el despliegue eficiente de Centros de Operaciones de Seguridad (SOC). Ofrece un entorno minimalista, endurecido y pre-configurado para analistas de ciberseguridad.</p>
+            
+            <div class="hero-actions">
+                <a href="#" class="btn-download">⬇ Descargar ISO (v1.0)</a>
+                <a href="https://github.com/tu-usuario/proteusos" target="_blank" class="link-github">Ver en GitHub ↗</a>
+            </div>
+        </section>
+
+        <section id="requisitos">
+            <h2>Requisitos del Sistema</h2>
+            <p>Para garantizar el rendimiento óptimo de los servicios de monitoreo y análisis, se recomienda el siguiente hardware:</p>
+            
+            <div class="req-grid">
+                <div class="req-card">
+                    <h4>Entorno de Pruebas</h4>
+                    <p>Ideal para estudiar, probar el sistema o laboratorios caseros.</p>
+                    <ul>
+                        <li><strong>CPU:</strong> 1 vCPU</li>
+                        <li><strong>RAM:</strong> 8 GB</li>
+                        <li><strong>Disco:</strong> 40 GB SSD</li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>Producción</h4>
+                    <p>Recomendado para despliegues reales y monitoreo activo.</p>
+                    <ul>
+                        <li><strong>CPU:</strong> 4 vCPU</li>
+                        <li><strong>RAM:</strong> 16 GB</li>
+                        <li><strong>Disco:</strong> 100 GB+ SSD</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion">
+            <h2>Instalación y Comandos</h2>
+            <p>Una vez arrancado el sistema desde la ISO, puedes utilizar los siguientes comandos para iniciar el despliegue o configurar los servicios básicos.</p>
+            
+            <p><strong>Descarga e instalación manual:</strong></p>
+            <div class="code-container">
+                <button class="copy-btn">Copiar</button>
+                <pre># Descargar la imagen (Ejemplo)
+wget https://github.com/usuario/proteusos/releases/download/v1.0/proteusos.iso
+
+# Verificar integridad (SHA256)
+sha256sum proteusos.iso
+
+# Comando de instalación (ejemplo ficticio)
+sudo ./install-proteus.sh --target /dev/sda --mode minimal</pre>
+            </div>
+        </section>
+
+        <section id="herramientas">
+            <h2>Herramientas Incluidas</h2>
+            <p>ProteusOS viene "baterías incluidas" pero sin bloatware. El stack principal incluye:</p>
+            <ul class="feature-list">
+                <li><strong>Wazuh:</strong> SIEM y XDR unificado (Agente/Manager preconfigurado).</li>
+                <li><strong>OpenSearch:</strong> Motor de búsqueda y analítica para logs.</li>
+                <li><strong>Suricata:</strong> IDS/IPS de alto rendimiento.</li>
+                <li><strong>Zeek:</strong> Monitor de seguridad de red.</li>
+                <li><strong>Herramientas de Red:</strong> Wireshark, Nmap, TCPdump.</li>
+            </ul>
+        </section>
+
+        <section id="disclaimer">
+            <h2>Aviso Legal</h2>
+            <div class="disclaimer-box">
+                <strong>Renuncia de Responsabilidad:</strong><br>
+                ProteusOS ha sido desarrollado con el propósito de facilitar la implementación y despliegue de entornos SOC. Este software se proporciona "tal cual", sin garantía de ningún tipo, expresa o implícita. El autor y los colaboradores del proyecto no se hacen responsables de daños directos, indirectos, pérdida de datos o fallos de seguridad derivados del uso de este sistema. El usuario asume total responsabilidad por su uso en entornos de producción.
+            </div>
+        </section>
+
+        <section id="donaciones">
+            <h2>Apoyar el Proyecto</h2>
+            <p>ProteusOS es un proyecto de código abierto mantenido en tiempo libre. Si te ha sido útil, considera hacer una donación para mantener los servidores y el café fluyendo.</p>
+            <ul class="donation-list">
+                <li>☕ <a href="https://ko-fi.com/tu-usuario" target="_blank">Apoyar en Ko-fi</a></li>
+                <li>💳 <a href="https://paypal.me/tu-usuario" target="_blank">Donar vía PayPal</a></li>
+            </ul>
+        </section>
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Para reportar bugs o consultas generales, por favor envía un correo a:</p>
+            <p>✉ <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
+        </section>
+
+        <footer>
+            <div>
+                ProteusOS - Linux for SOC Analysts.<br>
+                Hosted on GitHub Pages.
+            </div>
+            <div>
+                <a href="#inicio">Volver arriba</a>
+            </div>
+        </footer>
+
     </main>
 
-    <footer>
-        <p>Contacto: <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
-        <p>&copy; 2025 ProteusOS</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
