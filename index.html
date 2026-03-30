@@ -34,8 +34,7 @@
     <main>
         <section id="inicio">
             <h1>ProteusOS <span class="version-badge">v1.0 - Aegis</span></h1>
-            <p><strong>ProteusOS</strong> es una distribución basada en <strong>Debian 13 (XFCE)</strong>, optimizada para analistas de ciberseguridad. Ofrece un ecosistema de herramientas pre-configuradas para la detección de amenazas, gestión de registros y respuesta ante incidentes en un entorno endurecido (Hardened).</p>
-            
+            <p><strong>ProteusOS</strong> es una distribución basada en <strong>Debian 13 (XFCE)</strong>, optimizada para analistas de ciberseguridad. Ofrece un ecosistema endurecido para la detección de amenazas y respuesta ante incidentes sin comprometer el rendimiento.</p>
             <div class="hero-actions">
                 <a href="https://github.com/Proteus-OS/proteusos-build/releases/latest" class="btn-download">⬇ Descargar ISO (v1.0)</a>
                 <a href="https://github.com/Proteus-OS" target="_blank" class="link-github">Organización GitHub ↗</a>
@@ -44,17 +43,15 @@
 
         <section id="perfiles">
             <h2>Perfiles de Despliegue</h2>
-            <p>El sistema incluye un instalador TUI que permite seleccionar tres niveles de protección según la capacidad de cómputo y el alcance del monitoreo:</p>
-            
             <div class="req-grid">
                 <div class="req-card">
                     <h4 style="color: #4CAF50;">ProteusOS LITE</h4>
-                    <p>Protección de endpoints y perímetro básico. Instalación nativa optimizada.</p>
+                    <p>Protección de endpoints y perímetro. Instalación nativa optimizada.</p>
                     <ul class="feature-list-small">
                         <li><strong>Wazuh:</strong> SIEM/XDR unificado.</li>
                         <li><strong>CrowdSec:</strong> IPS colaborativo.</li>
                         <li><strong>AdGuard Home:</strong> DNS Sinkhole.</li>
-                        <li><strong>Tailscale:</strong> Red mesh segura.</li>
+                        <li>Herramientas de Red (Nmap/Tcpdump).</li>
                     </ul>
                 </div>
                 <div class="req-card">
@@ -64,7 +61,6 @@
                         <li><strong>Todo lo de LITE +</strong></li>
                         <li><strong>Suricata:</strong> IDS/IPS de red.</li>
                         <li><strong>Shuffle:</strong> Automatización SOAR.</li>
-                        <li>Inspección de paquetes activa.</li>
                     </ul>
                 </div>
                 <div class="req-card">
@@ -73,20 +69,18 @@
                     <ul class="feature-list-small">
                         <li><strong>Todo lo de STANDARD +</strong></li>
                         <li><strong>Zeek:</strong> Análisis de protocolos.</li>
-                        <li><strong>TheHive & Cortex:</strong> Gestión de casos.</li>
-                        <li>Full Forensic Suite.</li>
+                        <li><strong>TheHive & Cortex:</strong> Gestión de incidentes.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="arquitectura">
-            <h2>Estructura del Sistema</h2>
-            <p>ProteusOS utiliza una matriz de despliegue híbrida para maximizar el aislamiento y el rendimiento:</p>
+            <h2>Arquitectura Híbrida</h2>
+            <p>ProteusOS maximiza la eficiencia mediante una matriz de despliegue dual:</p>
             <ul>
-                <li><strong>Instalación Nativa (Systemd):</strong> Núcleo del sistema, monitores de red (Suricata/Zeek) y agentes de seguridad.</li>
-                <li><strong>Contenedores Aislados (Docker):</strong> Aplicaciones de gestión y orquestación (Shuffle, TheHive, Cortex) para facilitar actualizaciones y escalabilidad.</li>
-                <li><strong>Entorno Gráfico:</strong> XFCE configurado para bajo consumo de recursos.</li>
+                <li><strong>Nativo (Systemd):</strong> Núcleo del sistema y monitores de tráfico críticos para latencia cero.</li>
+                <li><strong>Contenedores (Docker):</strong> Orquestadores y aplicaciones de gestión aisladas para mayor estabilidad.</li>
             </ul>
         </section>
 
@@ -96,14 +90,16 @@
                 <div class="req-card">
                     <h4>Mínimo (LITE)</h4>
                     <ul>
-                        <li>CPU: 2 Cores / RAM: 4 GB</li>
+                        <li>CPU: 2 Cores</li>
+                        <li>RAM: 4 GB</li>
                         <li>Disco: 40 GB SSD</li>
                     </ul>
                 </div>
                 <div class="req-card">
-                    <h4>Óptimo (STANDARD/FULL)</h4>
+                    <h4>Óptimo (FULL)</h4>
                     <ul>
-                        <li>CPU: 4+ Cores / RAM: 16 GB</li>
+                        <li>CPU: 4+ Cores</li>
+                        <li>RAM: 16 GB</li>
                         <li>Disco: 100 GB+ SSD</li>
                     </ul>
                 </div>
@@ -111,12 +107,16 @@
         </section>
 
         <section id="donaciones">
-            <h2>Apoyo al Desarrollo</h2>
-            <p>ProteusOS es un proyecto impulsado por la comunidad. Tu aporte ayuda a mantener la infraestructura de compilación y descarga.</p>
+            <h2>Apoyo al Proyecto</h2>
             <ul class="donation-list">
-                <li>☕ <a href="https://ko-fi.com/proteusos" target="_blank">Apoyar en Ko-fi</a></li>
-                <li>💳 <a href="https://paypal.me/proteusos" target="_blank">Donar vía PayPal</a></li>
+                <li>☕ <a href="https://ko-fi.com/proteusos" target="_blank">Ko-fi</a></li>
+                <li>💳 <a href="https://paypal.me/proteusos" target="_blank">PayPal</a></li>
             </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>✉ <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
         </section>
 
         <footer>
