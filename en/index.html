@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProteusOS - Distribución Linux para SOC</title>
-    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
-    <link rel="stylesheet" href="styles.css">
+    <title>ProteusOS - Linux SOC Distribution</title>
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
     <aside>
         <div class="lang-selector" style="text-align: right; padding: 10px; font-size: 0.8em;">
-            <strong>ES</strong> | <a href="/en/" style="color: #888; text-decoration: none;">EN</a>
+            <a href="/" style="color: #888; text-decoration: none;">ES</a> | <strong>EN</strong>
         </div>
         <div class="logo-area">
-            <img src="assets/proteus3.png" alt="ProteusOS Logo" class="logo-img">
+            <img src="../assets/proteus3.png" alt="ProteusOS Logo" class="logo-img">
         </div>
         <nav>
             <ul>
-                <li><a href="#inicio" class="active">Inicio</a></li>
-                <li><a href="#perfiles">Perfiles</a></li>
-                <li><a href="#requisitos">Requisitos</a></li>
-                <li><a href="#instalacion">Instalación</a></li>
-                <li><a href="#donaciones">Donaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#deployment">Deployment</a></li>
+                <li><a href="#donations">Donations</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="copyright">
@@ -32,43 +32,43 @@
     </aside>
 
     <main>
-        <section id="inicio">
+        <section id="home">
             <h1>ProteusOS <span class="version-badge">v1.0 - Aegis</span></h1>
-            <p><strong>ProteusOS</strong> es una distribución basada en <strong>Debian 12 (XFCE)</strong> diseñada para el despliegue eficiente de Centros de Operaciones de Seguridad (SOC). Un entorno endurecido y listo para analistas.</p>
+            <p><strong>ProteusOS</strong> is a <strong>Debian 12 (XFCE)</strong> based distribution designed for rapid Security Operations Center (SOC) deployment. A hardened, minimal environment ready for analysts.</p>
             
             <div class="hero-actions">
-                <a href="https://github.com/germansilveira/proteusos-build/releases/latest" class="btn-download">⬇ Descargar ISO (v1.0)</a>
+                <a href="https://github.com/germansilveira/proteusos-build/releases/latest" class="btn-download">⬇ Download ISO (v1.0)</a>
                 <a href="https://github.com/germansilveira" target="_blank" class="link-github">GitHub ↗</a>
             </div>
         </section>
 
-        <section id="perfiles">
-            <h2>Perfiles de Instalación</h2>
+        <section id="profiles">
+            <h2>Installation Profiles</h2>
             <div class="req-grid">
                 <div class="req-card">
                     <h4 style="color: #4CAF50;">LITE</h4>
-                    <p>Protección básica y PyMEs.</p>
+                    <p>SMBs & Basic Perimeter protection.</p>
                     <ul class="feature-list-small">
                         <li>Wazuh (SIEM/XDR)</li>
-                        <li>CrowdSec (IPS)</li>
+                        <li>CrowdSec (Modern IPS)</li>
                         <li>AdGuard Home</li>
                         <li>Tailscale</li>
                     </ul>
                 </div>
                 <div class="req-card">
                     <h4 style="color: #2196F3;">STANDARD</h4>
-                    <p>Automatización y Red.</p>
+                    <p>Automation & Network Inspection.</p>
                     <ul class="feature-list-small">
-                        <li><strong>Todo lo de LITE +</strong></li>
+                        <li><strong>Everything in LITE +</strong></li>
                         <li>Suricata (IDS/IPS)</li>
                         <li>Shuffle (SOAR)</li>
                     </ul>
                 </div>
                 <div class="req-card">
                     <h4 style="color: #f44336;">FULL</h4>
-                    <p>Forense e Inteligencia.</p>
+                    <p>Total Forensics & Intelligence.</p>
                     <ul class="feature-list-small">
-                        <li><strong>Todo lo de STANDARD +</strong></li>
+                        <li><strong>Everything in STANDARD +</strong></li>
                         <li>Zeek (Network Mon)</li>
                         <li>TheHive & Cortex</li>
                     </ul>
@@ -76,18 +76,18 @@
             </div>
         </section>
 
-        <section id="requisitos">
-            <h2>Hardware Recomendado</h2>
+        <section id="requirements">
+            <h2>Hardware Requirements</h2>
             <div class="req-grid">
                 <div class="req-card">
-                    <h4>Mínimo (LITE)</h4>
+                    <h4>Minimum (LITE)</h4>
                     <ul>
                         <li>2 vCPU / 4 GB RAM</li>
                         <li>40 GB SSD</li>
                     </ul>
                 </div>
                 <div class="req-card">
-                    <h4>Óptimo (FULL)</h4>
+                    <h4>Optimal (FULL)</h4>
                     <ul>
                         <li>4+ vCPU / 16 GB RAM</li>
                         <li>100 GB+ SSD</li>
@@ -96,25 +96,23 @@
             </div>
         </section>
 
-        <section id="donaciones">
-            <h2>Apoyar el Proyecto</h2>
+        <section id="donations">
+            <h2>Support the Project</h2>
             <ul class="donation-list">
                 <li>☕ <a href="https://ko-fi.com/proteusos" target="_blank">Ko-fi</a></li>
                 <li>💳 <a href="https://paypal.me/proteusos" target="_blank">PayPal</a></li>
             </ul>
         </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
+        <section id="contact">
+            <h2>Contact</h2>
             <p>✉ <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
         </section>
 
         <footer>
-            <div>ProteusOS - 2026. Basado en Debian 12.</div>
+            <div>ProteusOS - 2026. Powered by Debian.</div>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
-
-
