@@ -19,10 +19,11 @@
         <nav>
             <ul>
                 <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#por-que">¿Por qué ProteusOS?</a></li>
+                <li><a href="#herramientas">Herramientas Core</a></li>
                 <li><a href="#perfiles">Perfiles SOC</a></li>
                 <li><a href="#arquitectura">Arquitectura</a></li>
                 <li><a href="#requisitos">Requisitos</a></li>
-                <li><a href="#donaciones">Donaciones</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -34,10 +35,40 @@
     <main>
         <section id="inicio">
             <h1>ProteusOS <span class="version-badge">v1.0 - Aegis</span></h1>
+            <h3 style="color: #4CAF50; margin-bottom: 15px;">Despliega tu propio SOC sin fricciones. Libre, estructural y al alcance de todos.</h3>
             <p><strong>ProteusOS</strong> es una distribución basada en <strong>Debian 13 (XFCE)</strong>, optimizada para analistas de ciberseguridad. Ofrece un ecosistema endurecido para la detección de amenazas y respuesta ante incidentes sin comprometer el rendimiento.</p>
-            <div class="hero-actions">
-                <a href="https://github.com/Proteus-OS/proteusos-build/releases/latest" class="btn-download">⬇ Descargar ISO (v1.0)</a>
-                <a href="https://github.com/Proteus-OS" target="_blank" class="link-github">Organización GitHub ↗</a>
+            
+            <div class="hero-actions" style="margin-top: 20px; display: flex; gap: 15px; align-items: center;">
+                <a href="#" class="btn-download" style="background-color: #555; cursor: not-allowed; text-decoration: none; opacity: 0.7;" onclick="return false;">⬇ Descargar ISO (Próximamente)</a>
+                <a href="https://github.com/Proteus-OS" target="_blank" class="link-github" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Ver Organización en GitHub ↗</a>
+            </div>
+            <p style="font-size: 0.9em; color: #ff9800; margin-top: 15px;">🚧 <em>Proyecto en desarrollo activo</em> 🚧</p>
+        </section>
+
+        <section id="por-que">
+            <h2>¿Por qué ProteusOS?</h2>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 12px;">✅ <strong>Para entornos reales:</strong> Ideal para despliegues con bajo presupuesto o recursos limitados.</li>
+                <li style="margin-bottom: 12px;">✅ <strong>Curva de aprendizaje:</strong> Perfecto para aprender cómo funciona un SOC centralizando herramientas, sin lidiar con configuraciones manuales complejas.</li>
+                <li style="margin-bottom: 12px;">✅ <strong>Despliegue Dinámico:</strong> Perfiles adaptables (Lite, Standard, Full) según las necesidades de tu infraestructura.</li>
+            </ul>
+        </section>
+
+        <section id="herramientas">
+            <h2>Herramientas Core</h2>
+            <div class="req-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div class="req-card" style="border: 1px solid #4CAF50; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #4CAF50; margin-top: 0;">SIEM / XDR</h4>
+                    <p style="margin-bottom: 0;"><strong>Wazuh</strong><br><small>Centralización de logs y detección de amenazas.</small></p>
+                </div>
+                <div class="req-card" style="border: 1px solid #2196F3; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #2196F3; margin-top: 0;">Seguridad de Red</h4>
+                    <p style="margin-bottom: 0;"><strong>Suricata & Zeek</strong><br><small>IDS/IPS y análisis profundo de protocolos.</small></p>
+                </div>
+                <div class="req-card" style="border: 1px solid #f44336; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #f44336; margin-top: 0;">Infraestructura</h4>
+                    <p style="margin-bottom: 0;"><strong>Docker</strong><br><small>Orquestación de contenedores aislados.</small></p>
+                </div>
             </div>
         </section>
 
@@ -76,12 +107,23 @@
         </section>
 
         <section id="arquitectura">
-            <h2>Arquitectura Híbrida</h2>
-            <p>ProteusOS maximiza la eficiencia mediante una matriz de despliegue dual:</p>
-            <ul>
-                <li><strong>Nativo (Systemd):</strong> Núcleo del sistema y monitores de tráfico críticos para latencia cero.</li>
-                <li><strong>Contenedores (Docker):</strong> Orquestadores y aplicaciones de gestión aisladas para mayor estabilidad.</li>
-            </ul>
+            <h2>Arquitectura Estructural Híbrida</h2>
+            <p>ProteusOS maximiza la eficiencia mediante una matriz de despliegue dual. Así se estructuran las capas del sistema:</p>
+            
+            <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border: 1px solid #444; text-align: center; margin: 20px 0;">
+                <div style="border: 2px dashed #2196F3; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+                    <strong style="color: #2196F3;">Capa de Contenedores (Docker)</strong><br>
+                    <small>Entornos aislados para: Shuffle (SOAR) | TheHive & Cortex | AdGuard Home</small>
+                </div>
+                <div style="border: 2px solid #4CAF50; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+                    <strong style="color: #4CAF50;">Capa Nativa (Bare Metal / Systemd)</strong><br>
+                    <small>Latencia cero para: Wazuh | Suricata | Zeek | CrowdSec | Tailscale</small>
+                </div>
+                <div style="background: #333; padding: 15px; border-radius: 5px; border: 1px solid #555;">
+                    <strong>Sistema Operativo Base</strong><br>
+                    <small>Debian 13 + XFCE</small>
+                </div>
+            </div>
         </section>
 
         <section id="requisitos">
@@ -115,12 +157,17 @@
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
-            <p>✉ <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></p>
+            <h2>Contacto y Autor</h2>
+            <p>Proyecto diseñado y desarrollado por <strong>Germán Silveira</strong>.</p>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 8px;">✉️ <strong>Correo:</strong> <a href="mailto:info@proteusos.tech">info@proteusos.tech</a></li>
+                <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adolfogsilveira" target="_blank">adolfogsilveira</a></li>
+            </ul>
         </section>
 
         <footer>
-            <div>ProteusOS - 2026. Basada en Debian 13 "Trixie".</div>
+            <div style="margin-bottom: 5px;">ProteusOS - 2026. Basada en Debian 13 "Trixie".</div>
+            <div style="font-size: 0.85em; color: #aaa;">Created by <a href="https://www.linkedin.com/in/adolfogsilveira" target="_blank" style="color: #aaa; text-decoration: underline;">Germán Silveira</a></div>
         </footer>
     </main>
     <script src="script.js"></script>
